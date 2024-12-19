@@ -75,10 +75,19 @@ void inputDiet(HealthData* health_data) {
     // ToCode: to enter the selected diet in the health data
     //choice number save to health data	
     if(choice == 1)
-    {
-    	health_data -> diet = 
-	}
-
+    	health_data -> diet = "rice - 600 kcal";
+    if(choice == 2)
+    	health_data -> diet = "bread - 680 kcal";
+    if(choice == 3)
+    	health_data -> diet = "chicken - 925 kcal";
+    if(choice == 4)
+    	health_data -> diet = "salad - 70 kcal";
+    if(choice == 5)
+    	health_data -> diet = "pizza - 900 kcal";
+    if(choice == 6)
+    	health_data -> diet = "tteokbokki - 615 kcal";
+    if(choice == 7)
+    	health_data -> diet = "rice - 600 kcal";
     // ToCode: to enter the total calories intake in the health data
 
 
