@@ -74,22 +74,38 @@ void inputDiet(HealthData* health_data) {
 
     // ToCode: to enter the selected diet in the health data
     //choice number save to health data	
-    if(choice == 1)
+    if(choice == 1){
     	health_data -> diet = "rice - 600 kcal";
-    if(choice == 2)
+    	i = 600;
+	}
+    if(choice == 2){
     	health_data -> diet = "bread - 680 kcal";
-    if(choice == 3)
+    	i = 680;
+	}
+    if(choice == 3){
     	health_data -> diet = "chicken - 925 kcal";
-    if(choice == 4)
+    	i = 925;
+	}
+    if(choice == 4){
     	health_data -> diet = "salad - 70 kcal";
-    if(choice == 5)
+    	i = 70;
+	}
+    if(choice == 5){
     	health_data -> diet = "pizza - 900 kcal";
-    if(choice == 6)
+    	i = 900;
+	}
+    if(choice == 6){
     	health_data -> diet = "tteokbokki - 615 kcal";
-    if(choice == 7)
+    	i = 615;
+	}
+    if(choice == 7){
     	health_data -> diet = "rice - 600 kcal";
+	}
     // ToCode: to enter the total calories intake in the health data
-
+	health_data->total_calories_intake += i;
+	
+	//save
+	saveData(health_data);
 
 }
 
