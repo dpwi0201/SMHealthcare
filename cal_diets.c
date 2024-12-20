@@ -63,12 +63,12 @@ void inputDiet(HealthData* health_data) {
     
     // ToCode: to provide the options for the diets to be selected
     printf("The list of diets:\n");
-    printf("1. rice (600kcal)");
-    printf("2. bread (680kcal)");
-    printf("3. chicken (925kcal)");
-    printf("4. salad (70kcal)");
-    printf("5. pizza (900kcal)");
-    printf("6. tteokbokki (615kcal)");
+    printf("1. rice (600kcal)\n");
+    printf("2. bread (680kcal)\n");
+    printf("3. chicken (925kcal)\n");
+    printf("4. salad (70kcal)\n");
+    printf("5. pizza (900kcal)\n");
+    printf("6. tteokbokki (615kcal)\n");
     printf("7. Exit\n");
     printf("Choose (1-7): ");
     scanf("%i", &choice);

@@ -66,13 +66,13 @@ void inputExercise(HealthData* health_data) {
     
     // ToCode: to provide the options for the exercises to be selected
     printf("The list of exercises: \n");
-	printf("1. walking (4kcal burned per min.)");
-	printf("2. running (11kcal burned per min.)");
-	printf("3. riding (5kcal burned per min.)");
-	printf("4. swimming (12kcal burned per min.)");
-	printf("5. pilates (4kcal burned per min.)");
-	printf("6. yoga (2kcal burned per min.)");
-	printf("7. Exit");
+	printf("1. walking (4kcal burned per min.)\n");
+	printf("2. running (11kcal burned per min.)\n");
+	printf("3. riding (5kcal burned per min.)\n");
+	printf("4. swimming (12kcal burned per min.)\n");
+	printf("5. pilates (4kcal burned per min.)\n");
+	printf("6. yoga (2kcal burned per min.)\n");
+	printf("7. Exit\n");
 
 
     // ToCode: to enter the exercise to be chosen with exit option

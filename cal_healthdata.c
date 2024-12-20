@@ -41,13 +41,13 @@ void saveData(const char* HEALTHFILEPATH, const HealthData* health_data) {
     // ToCode: to save the chosen diet and total calories intake 
     fprintf(file, "\n[Diets] \n");
 	fprintf(file, "%s", health_data->diet);
-	fprintf(file, "Total calories intake: %i kcal", health_data->total_calories_intake);
+	fprintf(file, "Total calories intake: %i kcal\n", health_data->total_calories_intake);
 
 
     // ToCode: to save the total remaining calrories
     fprintf(file, "\n[Total] \n");
-    fprintf(file, "Basal metabolic rate - 1300kcal");
-    fprintf(file, "The remaining calories - %i kcal", health_data->total_calories_intake - health_data->total_calories_burned - 1300); // remaining calories = total intake calories - exercise calories - basal metabolic rate
+    fprintf(file, "Basal metabolic rate - 1300kcal\n");
+    fprintf(file, "The remaining calories - %i kcal\n", health_data->total_calories_intake - health_data->total_calories_burned - 1300); // remaining calories = total intake calories - exercise calories - basal metabolic rate
     
 }
 
@@ -91,38 +91,38 @@ void printHealthData(const HealthData* health_data) {
 	// ToCode: to print out the recommendtaion depending on the current total calories burned and intake    
     //if remaining calories = 0, system end
     if(health_data->total_calories_intake - health_data->total_calories_burned - 1300 == 0){
-    	printf("You have consumed all your calories for today!");
+    	printf("You have consumed all your calories for today!\n");
 	}
     
     //if remaing calories < 0, "Too few calories!"
     if(health_data->total_calories_intake - health_data->total_calories_burned - 1300 < 0){
-    	printf("[Warning] Too few calories!");
+    	printf("[Warning] Too few calories!\n");
     	
     	//intake calories = 2000
     	if(health_data->total_calories_intake == 2000){
-    		printf("Your total calorie intake for today has reached your goal!");
+    		printf("Your total calorie intake for today has reached your goal!\n");
 		}
 		//intake calories < 2000
 		if(health_data->total_calories_intake < 2000){
-    		printf("Your total calorie intake for today has not reached your goal, remember to eat more!!");
+    		printf("Your total calorie intake for today has not reached your goal, remember to eat more!!\n");
 		}
 		//intake calories > 2000
 		if(health_data->total_calories_intake > 2000){
-    		printf("You have eaten more calories than planned today, but you have exercised too much!");
+    		printf("You have eaten more calories than planned today, but you have exercised too much!\n");
 		}		
     	
 	}
 	//if remaing calories > 0, "Please exercise for your health!"
 	if(health_data->total_calories_intake - health_data->total_calories_burned - 1300 > 0){
-		printf("Please exercise for your health!");
+		printf("Please exercise for your health!\n");
 		
 		//intake calories = 2000
 		if(health_data->total_calories_intake == 2000){
-    		printf("Your total calorie intake for today has reached your goal!");
+    		printf("Your total calorie intake for today has reached your goal!\n");
 		}
 		//intake calories < 2000
 		if(health_data->total_calories_intake < 2000){
-    		printf("Your total calorie intake for today has not reached your goal, remember to eat more!!");
+    		printf("Your total calorie intake for today has not reached your goal, remember to eat more!!\n");
 		}
 	}
 	
