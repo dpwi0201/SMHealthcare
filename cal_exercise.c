@@ -15,7 +15,7 @@
 
 #define MAX_EXERCISES 100  			// Maximum number of exercises
 #define MAX_EXERCISE_NAME_LEN 50	// Maximum length of the name of exercise
-typedef unsigned char Exercise; //자료형 설정
+
 
 // To declare the structure of the exercises
 static Exercise exercise_list[MAX_EXERCISES];

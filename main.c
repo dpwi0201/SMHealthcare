@@ -49,14 +49,17 @@ int main() {
         switch (choice) {
             case 1:
             	//excercise list, select excercise, data save
+            	inputExercise(health_data);
                 break;
                 
             case 2:
             	//diet list, select diet, data save
+            	inputDiet(health_data);
                 break;
                 
             case 3:
             	//overall data
+            	printHealthData(health_data);
                 break;
                 
             case 4:

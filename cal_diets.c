@@ -16,7 +16,6 @@
 #define MAX_DIETS 100      			// Maximum number of diets
 #define MAX_FOOD_NAME_LEN 50		// Maximum length of the name of food
 
-typedef unsigned char Diet; //자료형 설정
  
 // list of diets 
 static Diet diet_list[MAX_DIETS];
