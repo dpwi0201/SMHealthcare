@@ -36,10 +36,6 @@ void loadDiets(const char* DIETFILEPATH) {
      // ToCode: to read a list of the diets from the given file
      //diets.txt file에서 한글자씩 정보 가져오기
     while (diet_list[diet_list_size].food_name[MAX_FOOD_NAME_LEN] != EOF) {
-//    	c = fgetc(file);
-//		diet_list[diet_list_size] = c;
-//		diet_list_size++;
-//		
 		fgets(diet_list[diet_list_size].food_name[MAX_FOOD_NAME_LEN], MAX_FOOD_NAME_LEN, file);
 		diet_list_size++;
         if (diet_list_size >= MAX_DIETS){

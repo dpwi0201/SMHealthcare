@@ -40,7 +40,7 @@ void saveData(const char* HEALTHFILEPATH, const HealthData* health_data) {
     
     // ToCode: to save the chosen diet and total calories intake 
     fprintf(file, "\n[Diets] \n");
-	fprintf(file, "%s", health_data->diet);
+	fprintf(file, "%s\n", health_data->diet);
 	fprintf(file, "Total calories intake: %i kcal\n", health_data->total_calories_intake);
 
 
