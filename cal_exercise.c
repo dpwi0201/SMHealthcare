@@ -34,12 +34,12 @@ void loadExercises(const char* EXERCISEFILEPATH) {
     }
 
     // ToCode: to read a list of the exercises from the given file
-    while ( exercise_name != EOF) {
+    while ( exercise_list[exercise_list_size].exercise_name[MAX_EXERCISE_NAME_LEN] != EOF) {
 //    	c = fgetc(file);
 //		exercise_list[exercise_list_size] = c;
 //		exercise_list_size++;
 
-		fgets(exercise_list[exercise_list_size]->exercise_name[MAX_EXERCISE_NAME_LEN], MAX_EXERCISE_NAME_LEN, file);
+		fgets(exercise_list[exercise_list_size].exercise_name[MAX_EXERCISE_NAME_LEN], MAX_EXERCISE_NAME_LEN, file);
 		exercise_list_size++;
 		
         if (exercise_list_size >= MAX_EXERCISES){
@@ -86,27 +86,27 @@ void inputExercise(HealthData* health_data) {
 
     // ToCode: to enter the selected exercise and total calcories burned in the health data
     if(choice == 1){
-    	health_data -> diet = exercise_list[0]->exercise_name; // walking
+    	strcpy(health_data->exercises, exercise_list[0].exercise_name ); // walking
     	i = 4*duration; //burned calories 
 	}
     if(choice == 2){
-    	health_data -> diet = exercise_list[1]->exercise_name;//running
+    	strcpy(health_data->exercises, exercise_list[1].exercise_name );//running
     	i = 11*duration;//burned calories 
 	}
     if(choice == 3){
-    	health_data -> diet = exercise_list[2]->exercise_name;//riding
+    	strcpy(health_data->exercises, exercise_list[2].exercise_name );//riding
     	i = 5*duration;//burned calories 
 	}
     if(choice == 4){
-    	health_data -> diet = exercise_list[3]->exercise_name;//swimming
+    	strcpy(health_data->exercises, exercise_list[3].exercise_name );//swimming
     	i = 12*duration;//burned calories 
 	}
     if(choice == 5){
-    	health_data -> diet = exercise_list[4]->exercise_name;//pilates
+    	strcpy(health_data->exercises, exercise_list[4].exercise_name );//pilates
     	i = 4*duration;//burned calories 
 	}
     if(choice == 6){
-    	health_data -> diet = exercise_list[5]->exercise_name;//yoga
+    	strcpy(health_data->exercises, exercise_list[5].exercise_name );//yoga
     	i = 2*duration;//burned calories 
 	}
     if(choice == 7){
@@ -118,6 +118,4 @@ void inputExercise(HealthData* health_data) {
 	//total calories burned
 	health_data->total_calories_burned += i;
 	
-	//save
-	saveData(health_data);
 }

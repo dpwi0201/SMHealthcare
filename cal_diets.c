@@ -35,12 +35,12 @@ void loadDiets(const char* DIETFILEPATH) {
 
      // ToCode: to read a list of the diets from the given file
      //diets.txt file에서 한글자씩 정보 가져오기
-    while (food_name != EOF) {
+    while (diet_list[diet_list_size].food_name[MAX_FOOD_NAME_LEN] != EOF) {
 //    	c = fgetc(file);
 //		diet_list[diet_list_size] = c;
 //		diet_list_size++;
 //		
-		fgets(diet_list[diet_list_size]->food_name[MAX_FOOD_NAME_LEN], MAX_FOOD_NAME_LEN, file);
+		fgets(diet_list[diet_list_size].food_name[MAX_FOOD_NAME_LEN], MAX_FOOD_NAME_LEN, file);
 		diet_list_size++;
         if (diet_list_size >= MAX_DIETS){
         	break;
@@ -71,32 +71,32 @@ void inputDiet(HealthData* health_data) {
     printf("6. tteokbokki (615kcal)");
     printf("7. Exit\n");
     printf("Choose (1-7): ");
-    scanf("%i", &choice)
+    scanf("%i", &choice);
 
     // ToCode: to enter the selected diet in the health data
     //choice number save to health data	
     if(choice == 1){
-    	health_data -> diet = diet_list[0]->food_name; //rice
+    	strcpy(health_data->diet, diet_list[0].food_name ); //rice
     	i = 600; //rice calories
 	}
     if(choice == 2){
-    	health_data -> diet = diet_list[1]->food_name; //bread
+    	strcpy(health_data->diet, diet_list[1].food_name ); //bread
     	i = 680; //bread calories
 	}
     if(choice == 3){
-    	health_data -> diet = diet_list[2]->food_name; //chicken
+    	strcpy(health_data->diet, diet_list[2].food_name ); //chicken
     	i = 925; //chicken calories
 	}
     if(choice == 4){
-    	health_data -> diet = diet_list[3]->food_name; // salad
+    	strcpy(health_data->diet, diet_list[3].food_name ); // salad
     	i = 70; // salad calories
 	}
     if(choice == 5){
-    	health_data -> diet = diet_list[4]->food_name; // pizza
+    	strcpy(health_data->diet, diet_list[4].food_name ); // pizza
     	i = 900; // pizza calories
 	}
     if(choice == 6){
-    	health_data -> diet = diet_list[5]->food_name; // tteokbokki
+    	strcpy(health_data->diet, diet_list[5].food_name ); // tteokbokki
     	i = 615; // tteokbokki calories
 	}
     if(choice == 7){
@@ -108,8 +108,7 @@ void inputDiet(HealthData* health_data) {
     // ToCode: to enter the total calories intake in the health data
 	health_data->total_calories_intake += i;
 	
-	//save
-	saveData(health_data);
+
 
 }
 

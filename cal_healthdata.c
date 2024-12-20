@@ -34,7 +34,7 @@ void saveData(const char* HEALTHFILEPATH, const HealthData* health_data) {
 
     // ToCode: to save the chosen exercise and total calories burned 
     fprintf(file, "[Exercises] \n");
-    fprintf(file, "%s - %i kcal\n", health_data->exercise, health_data->exercise_count);
+    fprintf(file, "%s - %i kcal\n", health_data->exercises, health_data->exercise_count);
     fprintf(file, "Total calories burned: %i kcal\n", health_data->total_calories_burned);
     
     
@@ -66,7 +66,7 @@ void printHealthData(const HealthData* health_data) {
 	
 	// ToCode: to print out the saved history of exercises
 	printf("=========================== History of Exercise =======================\n");
-  	printf("Exercise: %s, Calories burned : %i kcal", health_data->exercise, health_data->exercise_count);
+  	printf("Exercise: %s, Calories burned : %i kcal", health_data->exercises, health_data->exercise_count);
   
     printf("=======================================================================\n");
 
@@ -92,7 +92,6 @@ void printHealthData(const HealthData* health_data) {
     //if remaining calories = 0, system end
     if(health_data->total_calories_intake - health_data->total_calories_burned - 1300 == 0){
     	printf("You have consumed all your calories for today!");
-    	break;
 	}
     
     //if remaing calories < 0, "Too few calories!"
