@@ -20,7 +20,7 @@
 // list of diets 
 static Diet diet_list[MAX_DIETS];
 static int diet_list_size = 0;
-char c;
+//char c;
 
 /*
     description : read the information in "diets.txt"
@@ -35,11 +35,13 @@ void loadDiets(const char* DIETFILEPATH) {
 
      // ToCode: to read a list of the diets from the given file
      //diets.txt file에서 한글자씩 정보 가져오기
-    while (c != EOF) {
-    	c = fgetc(file);
-		diet_list[diet_list_size] = c;
+    while (food_name != EOF) {
+//    	c = fgetc(file);
+//		diet_list[diet_list_size] = c;
+//		diet_list_size++;
+//		
+		fgets(diet_list[diet_list_size]->food_name[MAX_FOOD_NAME_LEN], MAX_FOOD_NAME_LEN, file);
 		diet_list_size++;
-		
         if (diet_list_size >= MAX_DIETS){
         	break;
 		}
@@ -61,12 +63,12 @@ void inputDiet(HealthData* health_data) {
     
     // ToCode: to provide the options for the diets to be selected
     printf("The list of diets:\n");
-    printf("1. %c%c%c%c (%c%c%c kcal)\n", diet_list[0], diet_list[1], diet_list[2], diet_list[3], diet_list[5], diet_list[6], diet_list[7]);
-    printf("2. %c%c%c%c%c (%c%c%c kcal)\n", diet_list[9], diet_list[10], diet_list[11], diet_list[12], diet_list[13], diet_list[15], diet_list[16], diet_list[17]);
-	printf("3. %c%c%c%c%c%c%c (%c%c%c kcal)\n", diet_list[19], diet_list[20], diet_list[21], diet_list[22], diet_list[23], diet_list[24], diet_list[25], diet_list[27], diet_list[28], diet_list[29]);
-	printf("4. %c%c%c%c%c (%c%c kcal)\n", diet_list[31], diet_list[32], diet_list[32], diet_list[33], diet_list[34], diet_list[36], diet_list[37]);
-	printf("5. %c%c%c%c%c (%c%c%c kcal)\n", diet_list[39], diet_list[40], diet_list[41], diet_list[42], diet_list[43], diet_list[45], diet_list[46], diet_list[47]);
-	printf("6. %c%c%c%c%c%c%c%c%c%c (%c%c%c kcal)\n", diet_list[49], diet_list[50], diet_list[51], diet_list[52], diet_list[53], diet_list[54], diet_list[55], diet_list[56], diet_list[57], diet_list[58], diet_list[60], diet_list[61], diet_list[62]);
+    printf("1. rice (600kcal)");
+    printf("2. bread (680kcal)");
+    printf("3. chicken (925kcal)");
+    printf("4. salad (70kcal)");
+    printf("5. pizza (900kcal)");
+    printf("6. tteokbokki (615kcal)");
     printf("7. Exit\n");
     printf("Choose (1-7): ");
     scanf("%i", &choice)
@@ -74,31 +76,31 @@ void inputDiet(HealthData* health_data) {
     // ToCode: to enter the selected diet in the health data
     //choice number save to health data	
     if(choice == 1){
-    	health_data -> diet = "rice - 600 kcal";
-    	i = 600;
+    	health_data -> diet = diet_list[0]->food_name; //rice
+    	i = 600; //rice calories
 	}
     if(choice == 2){
-    	health_data -> diet = "bread - 680 kcal";
-    	i = 680;
+    	health_data -> diet = diet_list[1]->food_name; //bread
+    	i = 680; //bread calories
 	}
     if(choice == 3){
-    	health_data -> diet = "chicken - 925 kcal";
-    	i = 925;
+    	health_data -> diet = diet_list[2]->food_name; //chicken
+    	i = 925; //chicken calories
 	}
     if(choice == 4){
-    	health_data -> diet = "salad - 70 kcal";
-    	i = 70;
+    	health_data -> diet = diet_list[3]->food_name; // salad
+    	i = 70; // salad calories
 	}
     if(choice == 5){
-    	health_data -> diet = "pizza - 900 kcal";
-    	i = 900;
+    	health_data -> diet = diet_list[4]->food_name; // pizza
+    	i = 900; // pizza calories
 	}
     if(choice == 6){
-    	health_data -> diet = "tteokbokki - 615 kcal";
-    	i = 615;
+    	health_data -> diet = diet_list[5]->food_name; // tteokbokki
+    	i = 615; // tteokbokki calories
 	}
     if(choice == 7){
-    	health_data -> diet = "rice - 600 kcal";
+    	
 	}
     // ToCode: to enter the total calories intake in the health data
 	health_data->total_calories_intake += i;
