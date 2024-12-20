@@ -113,6 +113,8 @@ void inputExercise(HealthData* health_data) {
     	
 	}
 	
+	//calories burned
+	health_data->exercise_count = i; //burned calories by choice
 	//total calories burned
 	health_data->total_calories_burned += i;
 	

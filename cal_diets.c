@@ -102,6 +102,9 @@ void inputDiet(HealthData* health_data) {
     if(choice == 7){
     	
 	}
+	
+	//intake calories by choice
+	health_data->diet_count = i;
     // ToCode: to enter the total calories intake in the health data
 	health_data->total_calories_intake += i;
 	
