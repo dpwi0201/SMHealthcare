@@ -66,13 +66,13 @@ void printHealthData(const HealthData* health_data) {
 	
 	// ToCode: to print out the saved history of exercises
 	printf("=========================== History of Exercise =======================\n");
-  	printf("Exercise: %s, Calories burned : %i kcal", health_data->exercises, health_data->exercise_count);
+  	printf("Exercise: %s, Calories burned : %i kcal\n", health_data->exercises, health_data->exercise_count);
   
     printf("=======================================================================\n");
 
     // ToCode: to print out the saved history of diets
     printf("============================= History of Diet =========================\n");
-	printf("Food: %s, Calories intake: %i kcal", health_data->diet, health_data->diet_count);
+	printf("Food: %s, Calories intake: %i kcal\n", health_data->diet, health_data->diet_count);
 
     printf("=======================================================================\n");
 
@@ -80,10 +80,10 @@ void printHealthData(const HealthData* health_data) {
 	// ToCode: to print out the saved history of calories including basal metabolic rate, 
 	// total calories burned, total calories intake, and the remaining calories
 	printf("============================== Total Calories =========================\n");
- 	printf("Basal Metabolic Rate: 1300 kcal");
- 	printf("Total calories burned: %i kcal", health_data->total_calories_burned);
- 	printf("Total calories intake: %i kcal", health_data->total_calories_intake);
- 	printf("The remaining calories: %i kcal", health_data->total_calories_intake - health_data->total_calories_burned - 1300);
+ 	printf("Basal Metabolic Rate: 1300 kcal\n");
+ 	printf("Total calories burned: %i kcal\n", health_data->total_calories_burned);
+ 	printf("Total calories intake: %i kcal\n", health_data->total_calories_intake);
+ 	printf("The remaining calories: %i kcal\n", health_data->total_calories_intake - health_data->total_calories_burned - 1300);
  
     printf("=======================================================================\n \n");
     
